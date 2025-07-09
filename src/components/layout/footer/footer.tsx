@@ -6,7 +6,7 @@ import "./footer.css";
 
 type TFooterProps = {
   children?: ReactNode;
-  className?: ReactNode;
+  className?: string;
 };
 
 export function Footer({ children, className }: TFooterProps) {

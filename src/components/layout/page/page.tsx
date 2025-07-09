@@ -6,7 +6,7 @@ import "./page.css";
 
 type TPageProps = {
   children?: ReactNode;
-  className?: ReactNode;
+  className?: string;
 };
 
 export function Page({ children, className }: TPageProps) {

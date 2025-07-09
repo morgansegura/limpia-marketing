@@ -6,7 +6,7 @@ import "./header.css";
 
 type THeaderProps = {
   children?: ReactNode;
-  className?: ReactNode;
+  className?: string;
 };
 
 export function Header({ children, className }: THeaderProps) {
