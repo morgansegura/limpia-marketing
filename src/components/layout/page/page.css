@@ -1,0 +1,9 @@
+@reference 'tailwindcss';
+
+.page {
+  @apply h-screen flex flex-col;
+}
+
+.page-main {
+  @apply flex-1;
+}

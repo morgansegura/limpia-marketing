@@ -1,0 +1,19 @@
+@reference 'tailwindcss';
+
+.footer,
+.footer-container,
+.footer-nav {
+  @apply flex items-center;
+}
+
+.footer {
+  @apply justify-center bg-(--color-primary);
+}
+
+.footer-container {
+  @apply py-24;
+}
+
+.footer-nav {
+  @apply flex-1 justify-end gap-x-4 lg:gap-x-12;
+}

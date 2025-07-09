@@ -1,0 +1,17 @@
+@reference "tailwindcss";
+
+.container {
+  @apply mx-auto;
+
+  &[data-container-spacing="true"] {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  &[data-container-variant="fluid"] {
+    @apply max-w-7xl;
+  }
+
+  &[data-container-variant="fluid"] {
+    @apply max-w-full;
+  }
+}

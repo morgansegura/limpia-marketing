@@ -1,0 +1,19 @@
+@reference 'tailwindcss';
+
+.header,
+.header-container,
+.header-nav {
+  @apply flex items-center;
+}
+
+.header {
+  @apply justify-center;
+}
+
+.header-container {
+  @apply py-4;
+}
+
+.header-nav {
+  @apply flex-1 justify-end gap-x-4 lg:gap-x-12;
+}
