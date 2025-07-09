@@ -13,7 +13,7 @@ export const generateMetadata = (): Metadata => {
     title: "Home Page",
     description: "This is a simple landing page.",
     path: "/",
-    imagePath: "/images/home-og.jpg",
+    imagePath: "/images/default-og.jpg",
   });
 };
 
