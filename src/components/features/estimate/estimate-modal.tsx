@@ -23,8 +23,8 @@ export function EstimateModal() {
       <DialogTrigger asChild>
         <Button variant="default">Get Your Estimate</Button>
       </DialogTrigger>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-        <EstimateFormWrapper onClose={() => setOpen(false)} />
+      <DialogContent className="max-w-2xl max-h-[90vh] p-12 overflow-y-auto">
+        <EstimateFormWrapper />
       </DialogContent>
     </Dialog>
   );

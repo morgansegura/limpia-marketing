@@ -10,7 +10,7 @@ import { sendPartialLead } from "@/lib/api/leads/send-partial-lead";
 
 import type { EstimateFormData } from "@/types/estimate.types";
 
-export function EstimateFormWrapper() {
+export function EstimateFormWrapper({}) {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<EstimateFormData>({
     id: uuidv4(),

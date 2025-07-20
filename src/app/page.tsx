@@ -98,14 +98,6 @@ export default function Home() {
           <Hero src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg" />
         </Section>
         <Container>
-          {/* <div className="flex flex-col items-center justify-center mt-6 bg-linear-to-b from-emerald-600 via-emerald-700 via-emerald-700 border-2 border-emerald-700  w-full py-6 rounded-xl">
-            <h2 className="text-3xl font-bold text-white">
-              A Higher Standard of Clean.
-            </h2>
-            <p className="text-lg font-medium">
-              Affordable luxury claeaning. Save money, and Get your time back.
-            </p>
-          </div> */}
           <div className="py-12 grid gap-y-8 lg:grid-cols-2 lg:gap-x-24 lg:py-24">
             <div className="flex flex-col justify-center gap-y-2 max-w-sm lg:max-w-xl lg:gap-y-4">
               <h1 className="text-3xl leading-tighter lg:text-5xl font-semibold text-blue-900">

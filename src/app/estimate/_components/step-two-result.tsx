@@ -29,15 +29,6 @@ export function StepTwoResult({
 
   return (
     <div className="space-y-8">
-      {/* <Button
-        variant="ghost"
-        size="sm"
-        onClick={onClose}
-        className="absolute right-0 top-0 text-muted-foreground"
-      >
-        Close
-      </Button> */}
-
       <div className="text-center">
         <h2 className="text-2xl font-semibold">Estimated Cleaning Prices</h2>
         <p className="text-muted-foreground mt-2">
