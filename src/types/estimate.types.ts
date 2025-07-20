@@ -1,4 +1,5 @@
 export type EstimateFormData = {
+  id: string;
   name: string;
   email: string;
   phone: string;
@@ -8,4 +9,5 @@ export type EstimateFormData = {
   contactPermission?: "yes" | "no";
   contactMethod?: string;
   contactPreferredTime?: string;
+  cleaningPreference?: string;
 };
