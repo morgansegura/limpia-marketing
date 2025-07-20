@@ -1,0 +1,9 @@
+@reference "tailwindcss";
+
+.hero {
+  @apply relative w-full aspect-video max-h-[600px];
+
+  img {
+    @apply absolute inset-0;
+  }
+}

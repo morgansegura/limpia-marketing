@@ -17,5 +17,5 @@ export function Section({
 }: TSectionProps) {
   const Component = as;
 
-  return <Component className={cn("footer", className)}>{children}</Component>;
+  return <Component className={cn("section", className)}>{children}</Component>;
 }
