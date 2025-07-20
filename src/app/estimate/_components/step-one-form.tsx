@@ -192,6 +192,19 @@ export function StepOneForm({ formData, setFormData, next }: Props) {
         </>
       )}
 
+      <div className="hidden">
+        <label htmlFor="company">Company</label>
+        <input
+          type="text"
+          name="company"
+          autoComplete="off"
+          value={(formData as any).company || ""}
+          onChange={(e) =>
+            setFormData({ ...formData, company: e.target.value })
+          }
+        />
+      </div>
+
       <Button type="submit" className="w-full">
         Get Estimate →
       </Button>

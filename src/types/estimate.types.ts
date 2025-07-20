@@ -3,6 +3,7 @@ export type EstimateFormData = {
   name: string;
   email: string;
   phone: string;
+  company?: string;
   address?: string;
   zip: string;
   squareFootage?: string;
