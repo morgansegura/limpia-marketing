@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import type { EstimateFormData } from "@/types/estimate.types";
@@ -16,7 +18,7 @@ export function StepThreeConfirmation({ formData }: Props) {
 
   return (
     <div className="text-center space-y-6">
-      <h2 className="text-2xl font-semibold">You're all set!</h2>
+      <h2 className="text-2xl font-semibold">You&apos;re all set!</h2>
       <p className="text-muted-foreground">
         Thank you {formData.name}, we’ve received your info and will be in touch
         soon.
@@ -24,7 +26,7 @@ export function StepThreeConfirmation({ formData }: Props) {
 
       <div className="pt-4">
         <Button asChild>
-          <a href="/">Return Home</a>
+          <Link href="/">Return Home</Link>
         </Button>
       </div>
     </div>

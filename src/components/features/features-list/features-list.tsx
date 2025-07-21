@@ -1,9 +1,9 @@
 import "./features-list.css";
 
-type TFeaturesList = {
-  title?: string;
-  descrption?: string;
-};
+// type TFeaturesList = {
+//   title?: string;
+//   descrption?: string;
+// };
 
 export function FeaturesList() {
   return (

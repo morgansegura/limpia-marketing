@@ -198,7 +198,7 @@ export function StepOneForm({ formData, setFormData, next }: Props) {
           type="text"
           name="company"
           autoComplete="off"
-          value={(formData as any).company || ""}
+          value={formData.company || ""}
           onChange={(e) =>
             setFormData({ ...formData, company: e.target.value })
           }

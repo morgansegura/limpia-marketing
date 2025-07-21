@@ -19,7 +19,6 @@ export function StepTwoResult({
   setFormData,
   prev,
   next,
-  onClose,
 }: TStepTwoResultProps) {
   const prices = calculatePrice(formData.zip, formData.squareFootage);
 
