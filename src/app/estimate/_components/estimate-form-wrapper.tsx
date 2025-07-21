@@ -32,19 +32,21 @@ export function EstimateFormWrapper({}) {
     }
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("estimateFormData", JSON.stringify(formData));
-  }, [formData]);
-
   const next = async () => {
     const nextStep = step + 1;
-    setStep(nextStep);
 
+    // Save to localStorage and send only at step 2
     if (nextStep === 2) {
-      // Save to localStorage and send to CRM
-      localStorage.setItem("estimateFormData", JSON.stringify(formData));
-      await sendPartialLead(formData);
+      const currentData = {
+        ...formData,
+        estimateStartedAt: new Date().toISOString(),
+      };
+
+      localStorage.setItem("estimateFormData", JSON.stringify(currentData));
+      await sendPartialLead(currentData);
     }
+
+    setStep(nextStep);
   };
 
   const prev = () => setStep((s) => s - 1);
