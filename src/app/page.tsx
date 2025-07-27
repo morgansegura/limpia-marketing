@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Metadata } from "next";
 
 import { getBaseMetadata } from "@/lib/metadata";
@@ -9,9 +8,8 @@ import { Header } from "@/components/layout/header/header";
 import { Page } from "@/components/layout/page/page";
 import { Footer } from "@/components/layout/footer/footer";
 import { Logo } from "@/components/layout/logo/logo";
-import { Section } from "@/components/layout/section/section";
 import { Hero } from "@/components/features/hero/hero";
-import { CheckCircle2Icon, CheckIcon, MenuIcon } from "lucide-react";
+import { MenuIcon } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -20,8 +18,15 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-
 import { EstimateModal } from "@/components/features/estimate/estimate-modal";
+import { CleaningTypesSection } from "@/components/features/cleaning-types-section/cleaning-types-section";
+import { CleaningSystemSection } from "@/components/features/cleaning-system-section/cleaning-system-section";
+import { AboutSection } from "@/components/features/about-section/about-section";
+import { CustomQuoteBanner } from "@/components/features/custom-quote-banner/custom-quote-banner";
+import { BlogListSection } from "@/components/features/blog-list-section/blog-list-section";
+import { FaqSection } from "@/components/features/faq-section/faq-section";
+import { TestimonialsSection } from "@/components/features/testimonials-section/testimonials-section";
+import { WhyUsSection } from "@/components/features/why-us-section/why-us-section";
 
 export const generateMetadata = (): Metadata => {
   return getBaseMetadata({
@@ -33,6 +38,28 @@ export const generateMetadata = (): Metadata => {
 };
 
 export default function Home() {
+  const navigation = {
+    header: {
+      nav: [
+        {
+          title: "Limpia Method",
+          label: "Limpia Method",
+          href: "/",
+        },
+        {
+          title: "Cleaning Services",
+          label: "Cleaning Services",
+          href: "/",
+        },
+        {
+          title: "About Us",
+          label: "About Us",
+          href: "/",
+        },
+      ],
+    },
+  };
+
   return (
     <Page>
       <Header>
@@ -94,84 +121,33 @@ export default function Home() {
         </Container>
       </Header>
       <main className="page-main">
-        <Section>
+        <Container className="grid gap-y-12 lg:gap-y-24">
+          {/* Hero */}
           <Hero src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg" />
-        </Section>
-        <Container>
-          <div className="py-12 grid gap-y-8 lg:grid-cols-2 lg:gap-x-24 lg:py-24">
-            <div className="flex flex-col justify-center gap-y-2 max-w-sm lg:max-w-xl lg:gap-y-4">
-              <h1 className="text-3xl leading-tighter lg:text-5xl font-semibold text-blue-900">
-                Keeping Your Home Cleaner With Our Detail-Clean Rotation System
-              </h1>
-              <p>
-                We use a careful system to deep clean each of your rooms on a
-                rotating basis. This ensures your home is always thoroughly
-                cleaned and sanitized, from the areas you use daily to that
-                hard-to-clean grout
-              </p>
-            </div>
-            <div className="grid gap-2 grid-cols-2 grid-rows-2">
-              <div className="relative">
-                <Image
-                  src="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg"
-                  alt="Client Kitchen"
-                  width={900}
-                  height={600}
-                />
-              </div>
-              <div className="relative">
-                <Image
-                  src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg"
-                  alt="Client Living Room"
-                  width={900}
-                  height={600}
-                />
-              </div>
-              <div className="relative">
-                <Image
-                  src="https://images.pexels.com/photos/2631746/pexels-photo-2631746.jpeg"
-                  alt="Client Bedroom"
-                  width={900}
-                  height={600}
-                />
-              </div>
-              <div className="relative">
-                <Image
-                  src="https://images.pexels.com/photos/7045909/pexels-photo-7045909.jpeg"
-                  alt="Client Bathroom"
-                  width={900}
-                  height={600}
-                />
-              </div>
-            </div>
-          </div>
-          <div className="pt-10">
-            <div>
-              <h2>What makes us different?</h2>
-              <h3>We are from the community.</h3>
-              <div className="grid gap-y-1">
-                <p className="flex gap-x-1 bg-emerald-50 p-2 rounded-lg">
-                  <span className="flex items-center w-6 h-6 bg-green-500 rounded-full">
-                    <CheckIcon className="w-4 fill-green-300" />
-                  </span>
-                  We are a small business working to serve our community.
-                </p>
-                <p className="flex gap-x-1">
-                  <span className="">
-                    <CheckCircle2Icon />
-                  </span>
-                  We are a small business working to serve our community.
-                </p>
-                <p className="flex gap-x-1">
-                  <span className="">
-                    <CheckCircle2Icon />
-                  </span>
-                  We are a small business working to serve our community.
-                </p>
-              </div>
-            </div>
-            <div className="grid gap-x-12 grid-cols-2"></div>
-          </div>
+
+          {/* About Section */}
+          <AboutSection />
+
+          {/* Cleaning Types Section */}
+          <CleaningTypesSection />
+
+          {/* Cleaning System Section */}
+          <CleaningSystemSection />
+
+          {/* The Difference: Why Us */}
+          <WhyUsSection />
+
+          {/* Testimonials */}
+          <TestimonialsSection />
+
+          {/* FAQ */}
+          <FaqSection />
+
+          {/* Banner */}
+          <CustomQuoteBanner />
+
+          {/* Banner */}
+          <BlogListSection />
         </Container>
       </main>
       <Footer>

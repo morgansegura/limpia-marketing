@@ -1,0 +1,30 @@
+/* Styles for typography */
+@reference "tailwindcss";
+
+.typography {
+  @apply relative font-medium text-slate-600;
+
+  &[data-typography-size="sm"] {
+    @apply text-sm lg:text-base;
+  }
+
+  &[data-typography-size="base"] {
+    @apply text-base lg:text-lg;
+  }
+
+  &[data-typography-size="lg"] {
+    @apply text-lg lg:text-xl;
+  }
+
+  &[data-typography-size="caption"] {
+    @apply font-semibold;
+  }
+
+  &[data-typography-size="display"] {
+    @apply font-bold;
+  }
+}
+
+.typography.kicker {
+  @apply gap-y-4 text-sm text-slate-500 font-bold bg-slate-100 inline-flex px-3 py-1.5 rounded-sm;
+}

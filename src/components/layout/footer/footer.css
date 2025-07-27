@@ -7,7 +7,7 @@
 }
 
 .footer {
-  @apply justify-center bg-(--color-primary);
+  @apply justify-center bg-(--color-accent-blue);
 }
 
 .footer-container {

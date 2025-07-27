@@ -1,0 +1,7 @@
+/* Styles for how-it-works-section */
+  @reference "tailwindcss";
+
+  .how-it-works-section {
+    @apply relative;
+  }
+  

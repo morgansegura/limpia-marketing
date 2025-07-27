@@ -1,0 +1,7 @@
+/* Styles for blog-list-section */
+  @reference "tailwindcss";
+
+  .blog-list-section {
+    @apply relative;
+  }
+  

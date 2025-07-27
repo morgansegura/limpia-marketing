@@ -9,10 +9,14 @@
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "format": "prettier --write \"src/**/*.tsx\" \"src/**/*.ts\"",
     "lint": "next lint",
+    "create:feature": "tsx scripts/create-component-feature.ts",
+    "create:layout": "tsx scripts/create-component-layout.ts",
+    "create:ui": "tsx scripts/create-component-ui.ts",
     "verify": "pnpm lint && pnpm format && pnpm typecheck"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
+    "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-select": "^2.2.5",
@@ -28,7 +32,9 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.60.0",
+    "react-icons": "^5.5.0",
     "tailwind-merge": "^3.3.1",
+    "tsx": "^4.20.3",
     "uuid": "^11.1.0",
     "zod": "^4.0.5",
     "zustand": "^5.0.6"

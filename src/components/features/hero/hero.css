@@ -1,9 +1,39 @@
 @reference "tailwindcss";
 
 .hero {
-  @apply relative w-full aspect-video max-h-[600px];
+  @apply relative flex flex-col justify-center z-0 w-full aspect-video overflow-hidden rounded-3xl;
 
+  &:before {
+    @apply content-[''] absolute inset-0 rounded-3xl bg-[#051729]/65;
+  }
+}
+
+.hero-icon {
+  @apply h-24;
+}
+
+.hero-header {
+  @apply relative flex z-0 mx-auto;
+}
+
+.hero-content {
+  @apply relative flex flex-col text-center justify-self-center self-center gap-y-6 z-0 max-w-2xl mx-auto;
+}
+
+.hero-kicker {
+  @apply text-(--color-accent-blue) text-center py-2 px-4 bg-white rounded-full text-base font-medium;
+}
+
+.hero-title {
+  @apply text-white font-bold text-center;
+}
+
+.hero-description {
+  @apply text-white text-lg tracking-tight text-shadow-2xs font-semibold;
+}
+
+.hero-bg-image {
   img {
-    @apply absolute inset-0;
+    @apply absolute -z-10 inset-0;
   }
 }

@@ -1,0 +1,7 @@
+/* Styles for cleaning-system-section */
+  @reference "tailwindcss";
+
+  .cleaning-system-section {
+    @apply relative;
+  }
+  

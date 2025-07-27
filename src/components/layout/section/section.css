@@ -1,5 +1,21 @@
 @reference 'tailwindcss';
 
 .section {
-  @apply relative;
+  @apply py-12;
+}
+
+.section-title-block {
+  @apply mb-6 px-6 grid gap-y-3 max-w-2xl;
+}
+
+.section-title {
+  @apply text-(--color-secondary) font-semibold;
+}
+
+.section-title-sm {
+  @apply text-3xl;
+}
+
+.section-description {
+  @apply text-lg;
 }

@@ -1,0 +1,7 @@
+/* Styles for contact-section */
+  @reference "tailwindcss";
+
+  .contact-section {
+    @apply relative;
+  }
+  

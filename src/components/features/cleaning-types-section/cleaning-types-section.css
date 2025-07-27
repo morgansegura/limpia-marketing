@@ -1,0 +1,53 @@
+/* Styles for cleaning-types-section */
+@reference "tailwindcss";
+
+.cleaning-types-section {
+  @apply relative grid gap-y-16 bg-slate-100 py-24 px-4 rounded-3xl;
+
+  .heading {
+    @apply flex-col;
+
+    span {
+      @apply text-sm self-center;
+    }
+  }
+
+  .typography.kicker {
+    @apply bg-white text-slate-600;
+  }
+}
+
+.cleaning-types-section .heading-block {
+  @apply flex flex-col gap-6 items-center max-w-2xl mx-auto text-center;
+}
+
+.cleaning-types-grid {
+  @apply grid grid-cols-2 gap-4 lg:grid-cols-4;
+}
+
+.cleaning-types-card {
+  @apply relative z-0 overflow-hidden grid gap-y-4 shadow rounded-3xl h-full px-6 py-12 pb-8 bg-white text-center
+  before:content-[''] before:absolute before:-z-10 before:h-[200%] before:rounded-full before:bg-(--color-accent-blue) before:translate-y-full before:inset-0 before:transition-all before:duration-600 before:ease-out hover:before:translate-y-[-25%];
+
+  &:hover {
+    .heading,
+    .typography {
+      @apply text-white transition-colors duration-650 ease-out;
+    }
+    .button {
+      @apply bg-white;
+    }
+  }
+
+  .button {
+    @apply self-end;
+  }
+}
+
+.button-container {
+  @apply grid justify-center gap-y-8 text-center;
+
+  .button-accent-blue {
+    @apply mx-auto;
+  }
+}

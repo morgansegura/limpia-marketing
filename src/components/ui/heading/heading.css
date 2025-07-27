@@ -1,0 +1,30 @@
+/* Styles for heading */
+@reference "tailwindcss";
+
+.heading {
+  @apply relative flex text-slate-800 leading-tight font-bold;
+
+  &[data-heading-size="xs"] {
+    @apply text-lg lg:text-xl;
+  }
+
+  &[data-heading-size="sm"] {
+    @apply text-xl lg:text-2xl;
+  }
+
+  &[data-heading-size="base"] {
+    @apply text-2xl lg:text-3xl;
+  }
+
+  &[data-heading-size="lg"] {
+    @apply text-3xl lg:text-4xl;
+  }
+
+  &[data-heading-size="xl"] {
+    @apply text-4xl lg:text-5xl;
+  }
+
+  &[data-heading-size="2xl"] {
+    @apply text-5xl lg:text-6xl;
+  }
+}

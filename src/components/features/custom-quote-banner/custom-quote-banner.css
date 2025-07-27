@@ -1,0 +1,18 @@
+/* Styles for custom-quote-banner */
+@reference "tailwindcss";
+
+.custom-quote-banner {
+  @apply relative px-14 py-24 mt-24 rounded-3xl bg-(--color-accent-yellow);
+}
+
+.custom-quote-grid {
+  @apply relative grid grid-cols-[4fr_3fr];
+
+  .image {
+    @apply absolute right-0 -bottom-24;
+  }
+
+  .button-block {
+    @apply justify-start mt-8;
+  }
+}

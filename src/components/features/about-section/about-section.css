@@ -1,0 +1,38 @@
+/* Styles for about-section */
+@reference "tailwindcss";
+
+.about-section {
+  @apply relative grid lg:grid-cols-2 gap-x-15;
+}
+
+.about-image img {
+  @apply flex rounded-3xl overflow-hidden;
+}
+
+.about-content {
+  @apply relative flex flex-col justify-center;
+}
+
+.about-heading-block {
+  @apply grid gap-y-4;
+}
+
+.about-heading-block .subheading {
+  @apply text-green-600;
+}
+
+.about-content-list {
+  @apply relative py-12;
+
+  ul {
+    @apply grid gap-x-4 gap-y-4 lg:grid-cols-2;
+  }
+
+  li {
+    @apply flex gap-x-2;
+  }
+
+  li svg {
+    @apply relative fill-(--color-accent-blue) text-xl top-0.5 lg:top-1;
+  }
+}

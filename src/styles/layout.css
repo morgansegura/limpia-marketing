@@ -1,0 +1,36 @@
+@reference "tailwindcss";
+
+.button-block {
+  @apply flex mt-2 justify-center gap-6;
+}
+
+.button {
+  @apply relative overflow-hidden z-0 font-bold cursor-pointer  
+  before:content-[''] before:absolute before:-z-10 before:w-[200%] before:h-full before:transition-all before:duration-500 before:ease-out before:-translate-x-full before:rounded-full
+  hover:before:translate-x-0 hover:before:rounded-3xl;
+}
+
+.button-accent-yellow {
+  @apply bg-(--color-accent-yellow) text-black hover:text-white hover:before:bg-(--color-accent-blue);
+}
+
+.button-accent-blue {
+  @apply bg-(--color-accent-blue) text-white hover:text-black hover:before:bg-(--color-accent-yellow);
+}
+
+.button-light {
+  @apply bg-slate-200 text-(--color-accent-blue) hover:text-black  hover:before:bg-(--color-accent-yellow);
+}
+
+.button-neutral {
+  @apply bg-slate-300 text-slate-600  hover:before:bg-white;
+}
+
+.button-white {
+  @apply bg-white text-black hover:text-white  hover:before:bg-(--color-accent-yellow);
+}
+
+/* Media */
+.image {
+  @apply flex rounded-3xl overflow-hidden;
+}

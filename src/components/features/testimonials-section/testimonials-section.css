@@ -1,0 +1,7 @@
+/* Styles for testimonials-section */
+  @reference "tailwindcss";
+
+  .testimonials-section {
+    @apply relative;
+  }
+  
