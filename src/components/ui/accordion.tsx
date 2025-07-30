@@ -2,10 +2,10 @@
 
 import * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { ChevronDownIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Button } from "./button";
 
 function Accordion({
   ...props
@@ -42,7 +42,9 @@ function AccordionTrigger({
         {...props}
       >
         {children}
-        <FaArrowRightLong className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" />
+        <span className="round-button button button-blue-accent bg-slate-600 text-white flex items-center justify-center rounded-full size-8">
+          <FaArrowRightLong className="pointer-events-none size-4 shrink-0 transition-transform duration-200" />
+        </span>
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   );

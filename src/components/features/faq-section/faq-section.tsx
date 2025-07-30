@@ -12,6 +12,7 @@ import { Heading } from "@/components/ui/heading/heading";
 import { Typography } from "@/components/ui/typography/typography";
 
 import "./faq-section.css";
+import { Container } from "@/components/layout/container/container";
 
 type TFaqSectionProps = {
   className?: string;
@@ -59,41 +60,43 @@ export function FaqSection({ className }: TFaqSectionProps) {
 
   return (
     <div className={cn("faq-section", className)}>
-      <div className="faq-grid">
-        <div className="accordion-block">
-          <div className="heading-block">
-            <Typography as="span" className="kicker">
-              {content.kicker}
-            </Typography>
-            <Heading as="h2">{content.heading}</Heading>
+      <Container>
+        <div className="faq-grid">
+          <div className="accordion-block">
+            <div className="heading-block">
+              <Typography as="span" className="kicker">
+                {content.kicker}
+              </Typography>
+              <Heading as="h2">{content.heading}</Heading>
+            </div>
+            <Accordion className="accordion" type="single" collapsible>
+              {content.faqs.map(({ question, answer, id }) => (
+                <AccordionItem key={id} className="accordion-item" value={id}>
+                  <AccordionTrigger className="accordion-trigger">
+                    <Heading as="h3" size="xs">
+                      {question}
+                    </Heading>
+                  </AccordionTrigger>
+                  <AccordionContent className="accordion-content">
+                    <Typography as="p" size="base">
+                      {answer}
+                    </Typography>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
-          <Accordion className="accordion" type="single" collapsible>
-            {content.faqs.map(({ question, answer, id }) => (
-              <AccordionItem key={id} className="accordion-item" value={id}>
-                <AccordionTrigger className="accordion-trigger">
-                  <Heading as="h3" size="xs">
-                    {question}
-                  </Heading>
-                </AccordionTrigger>
-                <AccordionContent className="accordion-content">
-                  <Typography as="p" size="base">
-                    {answer}
-                  </Typography>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <div>
+            <Image
+              className="image"
+              src={content.image.src}
+              alt={content.image.alt}
+              width={content.image.width}
+              height={content.image.height}
+            />
+          </div>
         </div>
-        <div>
-          <Image
-            className="image"
-            src={content.image.src}
-            alt={content.image.alt}
-            width={content.image.width}
-            height={content.image.height}
-          />
-        </div>
-      </div>
+      </Container>
     </div>
   );
 }

@@ -2,7 +2,7 @@
 @reference "tailwindcss";
 
 .cleaning-types-section {
-  @apply relative grid gap-y-16 bg-slate-100 py-24 px-4 rounded-3xl;
+  @apply relative grid gap-y-16 bg-slate-100 py-24 px-8 rounded-3xl;
 
   .heading {
     @apply flex-col;

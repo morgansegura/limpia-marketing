@@ -139,16 +139,18 @@ export default function Home() {
 
           {/* Testimonials */}
           <TestimonialsSection />
+        </Container>
 
-          {/* FAQ */}
-          <FaqSection />
+        {/* FAQ */}
+        <FaqSection />
 
+        <Container className="grid gap-y-12 lg:gap-y-24">
           {/* Banner */}
           <CustomQuoteBanner />
-
-          {/* Banner */}
-          <BlogListSection />
         </Container>
+
+        {/* Banner */}
+        <BlogListSection />
       </main>
       <Footer>
         <Container className="footer-container">

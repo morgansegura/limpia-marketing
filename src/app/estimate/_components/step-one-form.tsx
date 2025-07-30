@@ -108,9 +108,7 @@ export function StepOneForm({ formData, setFormData, next }: Props) {
       </FormItem>
 
       <FormItem>
-        <Label htmlFor="contactPermission">
-          Would you like us to contact you?
-        </Label>
+        <Label htmlFor="contactPermission">View contact preferences.</Label>
         <Switch
           id="contactPermission"
           checked={formData.contactPermission === "yes"}
