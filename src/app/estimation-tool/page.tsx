@@ -106,11 +106,14 @@ export default function QuoteEstimatorPage() {
             <strong>Labor Metrics</strong>
           </Label>
 
-          <div className="grid grid-cols-3 gap-4 pb-6 border-b">
+          <div className="flex gap-4 pb-6 border-b">
             <FormItem>
               <Label>SqFt</Label>
               <Input
                 type="number"
+                min={500}
+                max={5000}
+                step={50}
                 value={sqft}
                 onChange={(e) => setSqft(Number(e.target.value))}
               />
@@ -126,7 +129,7 @@ export default function QuoteEstimatorPage() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="apartment">Apartment</SelectItem>
-                  <SelectItem value="house">House (+$28)</SelectItem>
+                  <SelectItem value="house">House</SelectItem>
                 </SelectContent>
               </Select>
             </FormItem>
@@ -153,7 +156,7 @@ export default function QuoteEstimatorPage() {
             <strong>Labor Metrics</strong>
           </Label>
 
-          <div className="flex  gap-4 pb-6 border-b">
+          <div className="flex gap-4 pb-6 border-b">
             <FormItem>
               <Label>Hourly Rate</Label>
               <Input
@@ -191,7 +194,7 @@ export default function QuoteEstimatorPage() {
 
           <div className="flex gap-8 pb-6">
             <FormItem>
-              <Label>Discount Type</Label>
+              <Label>Discount</Label>
               <Select
                 value={discountType}
                 onValueChange={(v) => setDiscountType(v as TDiscountType)}
@@ -200,16 +203,19 @@ export default function QuoteEstimatorPage() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="flat">Flat ($)</SelectItem>
-                  <SelectItem value="percent">Percent (%)</SelectItem>
+                  <SelectItem value="flat">Flat $</SelectItem>
+                  <SelectItem value="percent">Percent %</SelectItem>
                 </SelectContent>
               </Select>
             </FormItem>
 
             <FormItem>
-              <Label>Discount Value</Label>
+              <Label>Discount Amt.</Label>
               <Input
                 type="number"
+                min={0}
+                max={discountType === "flat" ? 50 : 25}
+                step={discountType === "flat" ? 5 : 1}
                 value={discountValue}
                 onChange={(e) => setDiscountValue(Number(e.target.value))}
               />
@@ -228,28 +234,28 @@ export default function QuoteEstimatorPage() {
           <CardTitle>Quote Breakdown</CardTitle>
         </CardHeader>
         <CardContent className="grid grid-cols-2 gap-4 text-sm text-muted-foreground">
-          <div>
+          <div className="flex flex-col gap-2 lg:flex-row">
             <strong>Base:</strong> ${base.toFixed(2)}
           </div>
-          <div>
+          <div className="flex flex-col gap-2 lg:flex-row">
             <strong>Size Charge:</strong> ${size.toFixed(2)}
           </div>
-          <div>
+          <div className="flex flex-col gap-2 lg:flex-row">
             <strong>House Surcharge:</strong> ${houseSurcharge.toFixed(2)}
           </div>
-          <div>
+          <div className="flex flex-col gap-2 lg:flex-row">
             <strong>Frequency Discount:</strong> ${frequencyDiscount.toFixed(2)}
           </div>
-          <div>
+          <div className="flex flex-col gap-2 lg:flex-row">
             <strong>Turn 1 Charge:</strong> ${turn1.toFixed(2)}
           </div>
-          <div>
+          <div className="flex flex-col gap-2 lg:flex-row">
             <strong>Subtotal:</strong> ${subtotal.toFixed(2)}
           </div>
-          <div>
+          <div className="flex flex-col gap-2 lg:flex-row">
             <strong>Discount:</strong> -${discount.toFixed(2)}
           </div>
-          <div className="text-black font-medium">
+          <div className="flex flex-col gap-2 lg:flex-row text-black font-medium">
             <strong>Final Price:</strong> ${finalPrice.toFixed(2)}
           </div>
         </CardContent>
@@ -260,27 +266,27 @@ export default function QuoteEstimatorPage() {
           <CardTitle>Gross Profit</CardTitle>
         </CardHeader>
         <CardContent className="grid grid-cols-2 gap-4 text-sm text-muted-foreground">
-          <div>
+          <div className="flex flex-col gap-2 lg:flex-row">
             <strong>Labor Cost:</strong> ${contractorCost.toFixed(2)}
           </div>
-          <div>
+          <div className="flex flex-col gap-2 lg:flex-row">
             <strong>Supplies Cost (4%):</strong> ${suppliesCost.toFixed(2)}
           </div>
-          <div>
+          <div className="flex flex-col gap-2 lg:flex-row">
             <strong>Transport Cost (6%):</strong> $
             {transportationCost.toFixed(2)}
           </div>
-          <div>
+          <div className="flex flex-col gap-2 lg:flex-row">
             <strong>Realtor Commission (5%):</strong> $
             {realtorCommission.toFixed(2)}
           </div>
-          <div>
+          <div className="flex flex-col gap-2 lg:flex-row">
             <strong>Projected COGS:</strong> ${projectedCOGS.toFixed(2)}
           </div>
-          <div className="text-black font-medium">
+          <div className="flex flex-col gap-2 lg:flex-row text-black font-medium">
             <strong>Gross Profit:</strong> ${grossProfit.toFixed(2)}
           </div>
-          <div>
+          <div className="flex flex-col gap-2 lg:flex-row">
             <strong>Gross Profit %:</strong> {grossProfitPercent.toFixed(2)}%
           </div>
         </CardContent>
@@ -291,13 +297,13 @@ export default function QuoteEstimatorPage() {
           <CardTitle>Improved Model Estimate</CardTitle>
         </CardHeader>
         <CardContent className="grid grid-cols-2 gap-4 text-sm text-muted-foreground">
-          <div>
+          <div className="flex flex-col gap-2 lg:flex-row">
             <strong>Improved Base:</strong> ${improvedBase.toFixed(2)}
           </div>
-          <div>
+          <div className="flex flex-col gap-2 lg:flex-row">
             <strong>Improved Size Charge:</strong> ${improvedSize.toFixed(2)}
           </div>
-          <div className="col-span-2 text-black font-medium">
+          <div className="flex flex-col gap-2 lg:flex-row text-black font-medium">
             <strong>Improved Total:</strong> ${improvedPrice.toFixed(2)}
           </div>
           <p className="col-span-2 text-xs italic mt-2">
