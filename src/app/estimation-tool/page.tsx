@@ -106,10 +106,11 @@ export default function QuoteEstimatorPage() {
             <strong>Labor Metrics</strong>
           </Label>
 
-          <div className="flex gap-4 pb-6 border-b">
+          <div className="flex flex-wrap gap-4 pb-6 border-b">
             <FormItem>
               <Label>SqFt</Label>
               <Input
+                className="min-w-24"
                 type="number"
                 min={500}
                 max={5000}
@@ -192,7 +193,7 @@ export default function QuoteEstimatorPage() {
             <strong>Applied Discounts</strong>
           </Label>
 
-          <div className="flex gap-8 pb-6">
+          <div className="flex flex-wrap gap-8 pb-6">
             <FormItem>
               <Label>Discount</Label>
               <Select
