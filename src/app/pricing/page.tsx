@@ -37,18 +37,20 @@ export default function FullPricingTablePage() {
             <strong>Base Price:</strong> <code>$75.68 + $1 per 250 sqft</code>
           </p>
           <p>
-            <strong>Size Charge:</strong> manually defined per sqft tier (e.g., $15 @ 750, $35 @ 1000)
+            <strong>Size Charge:</strong> manually defined per sqft tier (e.g.,
+            $15 @ 750, $35 @ 1000)
           </p>
           <p>
             <strong>Deep Clean A/B:</strong> <code>$83</code> flat per job
           </p>
           <p>
-            <strong>Turn 1–4:</strong> tiered pricing based on sqft: 
+            <strong>Turn 1–4:</strong> tiered pricing based on sqft:
             <br />
             <code>
-              $40 → ≤1500,&nbsp;&nbsp;$45 → ≤2250,&nbsp;&nbsp;$50 → ≤2750,&nbsp;&nbsp;$60 → ≤3250,
+              $40 → ≤1500,&nbsp;&nbsp;$45 → ≤2250,&nbsp;&nbsp;$50 →
+              ≤2750,&nbsp;&nbsp;$60 → ≤3250,
               <br />
-              $65 → ≤3500,&nbsp;&nbsp;$70 → >3500
+              $65 → ≤3500,&nbsp;&nbsp;$70 → &gt;3500
             </code>
           </p>
           <p>
@@ -58,7 +60,7 @@ export default function FullPricingTablePage() {
             <strong>Move-in/Out Cleaning:</strong> <code>$232</code> flat
           </p>
         </CardContent>
-      </Card>      
+      </Card>
       <Card>
         <CardHeader>
           <CardTitle className="text-lg">

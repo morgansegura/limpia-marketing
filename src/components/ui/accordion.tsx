@@ -5,7 +5,6 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
 import { cn } from "@/lib/utils";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { Button } from "./button";
 
 function Accordion({
   ...props

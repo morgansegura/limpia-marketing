@@ -24,18 +24,19 @@ import {
   chargeBySize,
 } from "@/lib/pricing/pricing-data";
 import { FormItem } from "@/components/ui/form";
-import { Separator } from "@radix-ui/react-select";
+
+type TCleaningFrequency = "weekly" | "biweekly" | "monthly" | "once";
+type THomeType = "house" | "apartment";
+type TDiscountType = "flat" | "percent";
 
 export default function QuoteEstimatorPage() {
   const [sqft, setSqft] = useState(2200);
-  const [homeType, setHomeType] = useState<"house" | "apartment">("house");
-  const [frequency, setFrequency] = useState<
-    "weekly" | "biweekly" | "monthly" | "once"
-  >("weekly");
+  const [homeType, setHomeType] = useState<THomeType>("house");
+  const [frequency, setFrequency] = useState<TCleaningFrequency>("weekly");
   const [laborHours, setLaborHours] = useState(1);
   const [laborMinutes, setLaborMinutes] = useState(0);
   const [hourlyRate, setHourlyRate] = useState(25);
-  const [discountType, setDiscountType] = useState<"flat" | "percent">("flat");
+  const [discountType, setDiscountType] = useState<TDiscountType>("flat");
   const [discountValue, setDiscountValue] = useState(0);
   const [realtor, setRealtor] = useState(true);
   const [useImproved, setUseImproved] = useState(false);
@@ -50,17 +51,22 @@ export default function QuoteEstimatorPage() {
   const base = useImproved
     ? calculateBasePrice(sqft)
     : (initialBaseCharges[getIndex()] ?? 0);
+
   const size = useImproved
     ? calculateLinearSizeCharge(sqft)
     : (chargeBySize[getIndex()] ?? 0);
+
   const houseSurcharge = homeType === "house" ? 28.21 : 0;
+
   const frequencyDiscountMap: Record<string, number> = {
     weekly: -35,
     biweekly: -15,
     monthly: -5,
     once: 0,
   };
+
   const frequencyDiscount = frequencyDiscountMap[frequency] ?? 0;
+
   const turn1 = getTurnPrice(sqft);
 
   const subtotal = base + size + houseSurcharge + frequencyDiscount + turn1;
@@ -113,7 +119,7 @@ export default function QuoteEstimatorPage() {
               <Label>Home Type</Label>
               <Select
                 value={homeType}
-                onValueChange={(v) => setHomeType(v as any)}
+                onValueChange={(v) => setHomeType(v as THomeType)}
               >
                 <SelectTrigger>
                   <SelectValue />
@@ -128,7 +134,7 @@ export default function QuoteEstimatorPage() {
               <Label>Frequency</Label>
               <Select
                 value={frequency}
-                onValueChange={(v) => setFrequency(v as any)}
+                onValueChange={(v) => setFrequency(v as TCleaningFrequency)}
               >
                 <SelectTrigger>
                   <SelectValue />
@@ -188,7 +194,7 @@ export default function QuoteEstimatorPage() {
               <Label>Discount Type</Label>
               <Select
                 value={discountType}
-                onValueChange={(v) => setDiscountType(v as any)}
+                onValueChange={(v) => setDiscountType(v as TDiscountType)}
               >
                 <SelectTrigger>
                   <SelectValue />

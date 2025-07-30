@@ -38,27 +38,27 @@ export const generateMetadata = (): Metadata => {
 };
 
 export default function Home() {
-  const navigation = {
-    header: {
-      nav: [
-        {
-          title: "Limpia Method",
-          label: "Limpia Method",
-          href: "/",
-        },
-        {
-          title: "Cleaning Services",
-          label: "Cleaning Services",
-          href: "/",
-        },
-        {
-          title: "About Us",
-          label: "About Us",
-          href: "/",
-        },
-      ],
-    },
-  };
+  // const navigation = {
+  //   header: {
+  //     nav: [
+  //       {
+  //         title: "Limpia Method",
+  //         label: "Limpia Method",
+  //         href: "/",
+  //       },
+  //       {
+  //         title: "Cleaning Services",
+  //         label: "Cleaning Services",
+  //         href: "/",
+  //       },
+  //       {
+  //         title: "About Us",
+  //         label: "About Us",
+  //         href: "/",
+  //       },
+  //     ],
+  //   },
+  // };
 
   return (
     <Page>
